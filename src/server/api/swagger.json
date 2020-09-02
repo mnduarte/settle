@@ -1,0 +1,65 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Settler Challenge.",
+    "version": "1.0.0",
+    "title": "Settler Challenge"
+  },
+  "host": "localhost:9090",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "pair",
+      "description": "Rates of pairs"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/par": {
+      "get": {
+        "tags": [
+          "pair"
+        ],
+        "summary": "List of common pairs and rates",
+        "responses": {
+          "200": {
+            "description": "List of pairs"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Pair": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "pair": {
+          "type": "string"
+        },
+        "rate": {
+          "type": "string"
+        }
+      }
+    },
+    "ApiResponse": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
